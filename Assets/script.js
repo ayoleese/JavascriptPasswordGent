@@ -25,9 +25,9 @@ function writePassword() {
     var randomIndex = Math.floor(Math.random() * randomPass.length);
     password +=  randomPass.charAt(randomIndex);
   }
-  if (passwordText) {
-    passwordText.value = password;
-  }
+  // if (passwordText) {
+  //   passwordText.value = password;
+  // }
 
 }
 
