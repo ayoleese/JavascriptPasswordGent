@@ -25,9 +25,10 @@ function writePassword() {
     var randomIndex = Math.floor(Math.random() * randomPass.length);
     password +=  randomPass.charAt(randomIndex);
   }
-  // if (passwordText) {
-  //   passwordText.value = password;
-  // }
+
+  if (passwordText) {
+    passwordText.value = password;
+  }
 
 }
 
@@ -59,7 +60,10 @@ function generatePassword() {
   alert("Please pick a number")
   return
 }
+
+// var selectedChars = '';
 var numberChoice = confirm("Click OK if you like numbers in your password")
+// if (numberChoice) selectedChars += numberChar;
 //console.log(numberChoice)
 var lowerCaseChoice = confirm("Click OK if you want your password to contain lower case letters")
 //console.log(lowerCaseChoice)
