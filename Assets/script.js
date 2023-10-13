@@ -10,10 +10,10 @@
 
 var generateBtn = document.querySelector("#generate");
 var charLength
-var numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '=', '+', '/', '<', '>', '?', '[', ']'];
-var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var numberChar = ['0123456789'];
+var specialChar = ['!@#$%^&*()+={}<>?'];
+var lowerCase = ['abcdefghijklmnopqrstuvwxyz'];
+var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 var randomPass = numberChar + specialChar + lowerCase + upperCase;
 
 // Write password to the #password input
@@ -26,7 +26,7 @@ function writePassword() {
     password +=  randomPass.charAt(randomIndex);
   }
 
-  if (passwordText) {
+  if (password) {
     passwordText.value = password;
   }
 
