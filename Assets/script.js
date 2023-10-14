@@ -28,6 +28,7 @@ function writePassword() {
 
   if (password) {
     passwordText.value = password;
+    return;
   }
 
 }
@@ -39,38 +40,54 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   charLength = parseInt(prompt("How many characters you want your password to be? Enter a number between 8-128."));
 
-  //( if (charLength < 8 || charLength > 128 || isNaN(charLength)) {
-  // alert("//");
-  // return;) ----- sums up the if's below
+  if (isNaN(charLength) || charLength < 8 || charLength > 128) {
+    alert("Please enter a valid password length between 8 and 128 characters.")
+    return;
+    }
 
-  //if person picked less than 8 characters in their password
-  if (charLength < 8){
-  alert("Please pick any number more than 8")
-  return
-}
-//if person picked a character higher than 128
-  if (charLength > 128){
-  alert("Please pick any number no more than 128")
-  return
-}
-// console.log(typeof charLength)
-// console.log(isNaN(charLength)) --> isNaN-is Not a Number
-// rejects if the person didn't enter a number between what was asked
-  if (isNaN(charLength)){
-  alert("Please pick a number")
-  return
-}
+//   // if person picked less than 8 characters in their password
+//   if (charLength < 8){
+//   alert("Please pick any number more than 8")
+//   return
+// }
+// //if person picked a character higher than 128
+//   if (charLength > 128){
+//   alert("Please pick any number no more than 128")
+//   return
+// }
+// // console.log(typeof charLength)
+// // console.log(isNaN(charLength)) --> isNaN-is Not a Number
+// // rejects if the person didn't enter a number between what was asked
+//   if (isNaN(charLength)){
+//   alert("Please pick a number")
+//   return
+// }
 
-// var selectedChars = '';
+var selectedChars = '';
 var numberChoice = confirm("Click OK if you like numbers in your password")
-// if (numberChoice) selectedChars += numberChar;
 //console.log(numberChoice)
+if (numberChoice) selectedChars += numberChar;
+
+
 var lowerCaseChoice = confirm("Click OK if you want your password to contain lower case letters")
 //console.log(lowerCaseChoice)
+if (lowerCaseChoice) selectedChars += lowerCase;
+
+
 var upperCaseChoice = confirm("Click OK if you want your password to contain UPPER case letters")
 //console.log(upperCaseChoice)
+if (upperCaseChoice) selectedChars += upperCase;
+
+
 var specialChoice = confirm("Click OK if you want special characters in your password")
 //console.log(specialChoice)
+if (specialChoice) selectedChars += specialChar;
 
-  return password;
+
+if (selectedChars.length === 0) {
+  alert("Please select at least one character type for your password.");
+  return '';
+}
+
+  return '';
 }
