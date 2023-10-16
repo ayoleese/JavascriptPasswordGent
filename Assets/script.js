@@ -42,7 +42,7 @@ function generatePassword() {
 
   if (isNaN(charLength) || charLength < 8 || charLength > 128) {
     alert("Please enter a valid password length between 8 and 128 characters.")
-    return;
+    prompt("How many characters you want your password to be? Enter a number between 8-128.");
     }
 
 //   // if person picked less than 8 characters in their password
@@ -63,25 +63,32 @@ function generatePassword() {
 //   return
 // }
 
-var selectedChars = '';
+var selectedChars
 var numberChoice = confirm("Click OK if you like numbers in your password")
 //console.log(numberChoice)
-if (numberChoice) selectedChars += numberChar;
+if (numberChoice) selectedChars += numberChar; {
 
+}
+
+// NEED TO ADD FALSE STATEMENT WHEN SELECTED "CANCEL" NUMBERS
 
 var lowerCaseChoice = confirm("Click OK if you want your password to contain lower case letters")
 //console.log(lowerCaseChoice)
-if (lowerCaseChoice) selectedChars += lowerCase;
-
+if (lowerCaseChoice) selectedChars += lowerCase; {
+  // if (lowerCaseChoice) selectedChars != lowerCase;
+}
 
 var upperCaseChoice = confirm("Click OK if you want your password to contain UPPER case letters")
 //console.log(upperCaseChoice)
-if (upperCaseChoice) selectedChars += upperCase;
-
+if (upperCaseChoice) selectedChars += upperCase; {
+  // if (upperCaseChoice) selectedChars != upperCase;
+}
 
 var specialChoice = confirm("Click OK if you want special characters in your password")
 //console.log(specialChoice)
-if (specialChoice) selectedChars += specialChar;
+if (specialChoice) selectedChars += specialChar; {
+  // if (specialChoice) selectedChars != specialChar;
+}
 
 
 if (selectedChars.length === 0) {
